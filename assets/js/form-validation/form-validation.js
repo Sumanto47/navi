@@ -81,14 +81,22 @@ document.addEventListener('DOMContentLoaded', function() {
   //------------------------------------- FORM FUNCTION START ------------------------------//
   
     // Form show/hide functionality
-  $(document).ready(function() {
+ jQuery(document).ready(function($) {
       $('#select_purpose input[type="radio"]').on('change', function() {
           if ($('#telecom').is(':checked')) {
               $('#select_type_box').show();
               $('#select_type_box_2').hide();
+              $('#choose_prod_jio').show();
+              $('#choose_prod_sales').hide();
+                $('#choose_prod_services').hide();
+                
           } else if ($('#it').is(':checked')) {
               $('#select_type_box').hide();
               $('#select_type_box_2').show();
+                $('#choose_prod_sales').show();
+                $('#choose_prod_jio').hide();
+                $('#choose_prod_tatatele').hide();
+                
           } else {
               $('#select_type_box').hide();
               $('#select_type_box_2').hide();
@@ -99,22 +107,28 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   
     
-  $('#type').on('change', function() {
-    $('#choose_prod_jio').css('display', 'none');
-    if ( $(this).val() === 'jio' ) {
-      $('#choose_prod_jio').css('display', 'block');
+  jQuery('#type').on('change', function() {
+    jQuery('#choose_prod_jio').css('display', 'none');
+    if ( jQuery(this).val() === 'jio' ) {
+        
+        jQuery('#choose_prod_jio').css('display', 'block');
     }
-    $('#choose_prod_tatatele').css('display', 'none');
-    if ( $(this).val() === 'tatatele' ) {
-      $('#choose_prod_tatatele').css('display', 'block');
+    jQuery('#choose_prod_tatatele').css('display', 'none');
+    if ( jQuery(this).val() === 'tatatele' ) {
+       
+        jQuery('#choose_prod_tatatele').css('display', 'block');
     }
-    $('#choose_prod_sales').css('display', 'none');
-    if ( $(this).val() === 'sales' ) {
-      $('#choose_prod_sales').css('display', 'block');
+});
+    jQuery('#type2').on('change', function() {
+    jQuery('#choose_prod_sales').css('display', 'none');
+    if ( jQuery(this).val() === 'sales' ) {
+      
+        jQuery('#choose_prod_sales').css('display', 'block');
     }
-    $('#choose_prod_services').css('display', 'none');
-    if ( $(this).val() === 'services' ) {
-      $('#choose_prod_services').css('display', 'block');
+    jQuery('#choose_prod_services').css('display', 'none');
+    if ( jQuery(this).val() === 'services' ) {
+       
+        jQuery('#choose_prod_services').css('display', 'block');
     }
   });
   
